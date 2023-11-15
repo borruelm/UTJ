@@ -24,5 +24,9 @@ services:
       MYSQL_USER: utjwebuser
       MYSQL_PASSWORD: Nov.2023$$
       MYSQL_ROOT_PASSWORD: test
+  api:
+    build: ./utj
+    ports:
+      - "8080:8080"
 volumes:
   persistent:
