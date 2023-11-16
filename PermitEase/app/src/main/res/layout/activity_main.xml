@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="PermitEase"
+        android:id="@+id/title"
+        android:textSize="40sp"
+        android:paddingTop="100dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Iniciar session"
+        android:layout_below="@+id/title"
+        android:textSize="30sp"
+        android:id="@+id/suggestion"
+        android:padding="30dp"/>
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:hint="Usuario"
+        android:layout_below="@+id/suggestion"
+        android:inputType="textPersonName"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:hint="Contraseña"
+        android:text=""
+        android:layout_below="@+id/user"
+        android:inputType="textPassword"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pass"
+        android:paddingTop="50dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/pass"
+            android:gravity="center"
+            android:text="iniciar sesion" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
