@@ -2,6 +2,8 @@ package com.example.utj.controller;
 
 import com.example.utj.entity.LoginRequest;
 import com.example.utj.entity.UserResponse;
+import com.example.utj.entity.Usuario;
+import com.example.utj.repository.UsuarioRepository;
 import com.example.utj.service.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v2/user")
 public class User {
     @Autowired
-    UserServices usrServices;
+    private UserServices usrServices;
 
     @PostMapping(value = "/login")
     public ResponseEntity<UserResponse> login(@RequestBody LoginRequest usrReq){
