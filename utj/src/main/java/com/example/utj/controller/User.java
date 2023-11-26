@@ -21,7 +21,7 @@ public class User {
     private UserServices usrServices;
 
     @PostMapping(value = "/login")
-    public ResponseEntity<UserResponse> login(@RequestBody LoginRequest usrReq){
+    public ResponseEntity<UserResponse> login(LoginRequest usrReq){
         return new ResponseEntity<>(usrServices.loginUsr(usrReq), HttpStatus.ACCEPTED);
     }
 
