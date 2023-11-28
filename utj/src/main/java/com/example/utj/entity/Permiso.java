@@ -1,22 +1,26 @@
 package com.example.utj.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import java.sql.Timestamp;
 
-import java.util.Date;
 @Entity
 @Data
 public class Permiso {
-    private Date diasolicitado;
-    private String estado;
-    private Date fechasolicitud;
-    private Integer iddocumento;
     @Id
     @GeneratedValue(strategy
             = GenerationType.AUTO)
     private Integer idpermiso;
     private String nombre;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp fechasolicitud;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp fechainicio;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp fechafin;
+    private String estado;
+    private Integer usuarioIdusuario;
+    private Integer rolIdrol;
+    private String tipo;
+//    private Integer iddocumento;
 }
