@@ -22,5 +22,6 @@ public class Permiso {
     private Integer usuarioIdusuario;
     private Integer rolIdrol;
     private String tipo;
+    private String matricula;
 //    private Integer iddocumento;
 }

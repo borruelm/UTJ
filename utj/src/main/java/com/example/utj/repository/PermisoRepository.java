@@ -12,10 +12,17 @@ import java.util.List;
 
 public interface PermisoRepository extends CrudRepository<Permiso, Integer> {
 
-    @Query(value="SELECT p.`idPermiso`, p.`rol_idRol`, p.fechasolicitud, p.fechainicio, p.fechafin, st.nombreEstado estado, p.iddocumento, usr.nombre, tp.nombre tipo, p.iddocumento, p.usuario_idUsuario FROM `permiso` p left JOIN usuario usr on p.`usuario_idUsuario` = usr.idUsuario left JOIN tipo_permiso tp on p.tipo = tp.idTipoPermiso left join estado st on p.estado = st.idEstado;", nativeQuery= true )
+    @Query(value="SELECT p.`idPermiso`, p.`rol_idRol`, p.fechasolicitud, p.fechainicio, p.fechafin, st.nombreEstado estado," +
+            " p.iddocumento, usr.nombre, tp.nombre tipo, p.iddocumento, p.usuario_idUsuario, usr.matricula FROM `permiso` p " +
+            "left JOIN usuario usr on p.`usuario_idUsuario` = usr.idUsuario left JOIN tipo_permiso tp on p.tipo = tp.idTipoPermiso " +
+            "left join estado st on p.estado = st.idEstado;", nativeQuery= true )
     List<Permiso> findAll();
 
-    List<Permiso> findAllByUsuarioIdusuario(Integer usuarioIdusuario);
+    @Query(value="SELECT p.`idPermiso`, p.`rol_idRol`, p.fechasolicitud, p.fechainicio, p.fechafin, st.nombreEstado estado," +
+            " p.iddocumento, usr.nombre, tp.nombre tipo, p.iddocumento, p.usuario_idUsuario, usr.matricula FROM `permiso` p " +
+            "left JOIN usuario usr on p.`usuario_idUsuario` = usr.idUsuario left JOIN tipo_permiso tp on p.tipo = tp.idTipoPermiso " +
+            "left join estado st on p.estado = st.idEstado where p.usuario_idUsuario = :usuarioIdUsuario ", nativeQuery= true )
+    List<Permiso> findAllByUsuarioIdusuario(@Param("usuarioIdUsuario")  Integer usuarioIdUsuario);
 
     @Modifying
     @Transactional

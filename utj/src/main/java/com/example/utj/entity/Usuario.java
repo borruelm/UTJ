@@ -9,7 +9,8 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy
             = GenerationType.AUTO)
-    private int idUsuario;
+    private Integer idusuario;
+    private Integer id;
     private String nombre;
     private String correoElectronico;
     private String contrasena;
@@ -18,8 +19,4 @@ public class Usuario {
     private int tiempoServicio;
     private String direccion;
     private String foto;
-
-
-
-
 }

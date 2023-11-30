@@ -8,6 +8,8 @@ import com.example.utj.service.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class UserServicesImpl implements UserServices {
@@ -22,6 +24,16 @@ public class UserServicesImpl implements UserServices {
         usrOutput.setAdmin(usuario.getRol() == 1);
 
         return usrOutput;
+    }
 
+    public String crear(Usuario newUsr){
+        usuarioRepository.save(newUsr);
+
+        return "Usuarion creado con exito";
+
+    }
+
+    public List<Usuario> getAll(){
+        return (List<Usuario>) usuarioRepository.findAll();
     }
 }
